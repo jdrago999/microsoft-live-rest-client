@@ -1,1 +1,1 @@
-# microsoft-live-rest-client
+# microsoft-live-simple
