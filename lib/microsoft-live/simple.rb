@@ -12,19 +12,12 @@ module MicrosoftLive
     base_uri 'https://login.live.com/'
 
     def initialize(token:, refresh_token:, expires_at:)
-      self.client_id = self.class.config.client_id
-      self.client_secret = self.class.config.client_secret
-      self.redirect_uri = self.class.config.redirect_uri
+      self.client_id = MicrosoftLive.config.client_id
+      self.client_secret = MicrosoftLive.config.client_secret
+      self.redirect_uri = MicrosoftLive.config.redirect_uri
       self.token = token
       self.refresh_token = refresh_token
       self.expires_at = expires_at
-
-      if Time.now.to_i > expires_at
-        new_auth = renew_token
-        self.token = new_auth.token
-        self.refresh_token = new_auth.refresh_token
-        self.expires_at = new_auth.expires_at
-      end
     end
 
     def contacts
@@ -38,6 +31,12 @@ module MicrosoftLive
     end
 
     def user(user_id)
+      data = get_object(url: user_id)
+      ::MicrosoftLive::User.new(data: data, simple: self)
+    end
+
+    def get_object(url:)
+      ensure_valid_token!
       self.class.base_uri 'https://apis.live.net/v5.0'
       res = self.class.get('/%s' % user_id,
         headers: {
@@ -46,14 +45,14 @@ module MicrosoftLive
       )
       case res.code
       when 200
-        data = JSON.parse(res.body, symbolize_names: true)
-        ::MicrosoftLive::User.new(data: data, simple: self)
+        JSON.parse(res.body, symbolize_names: true)
       else
         raise ApiError.new res.body
       end
     end
 
     def get_collection(url:, limit: 10, offset: 0)
+      ensure_valid_token!
       self.class.base_uri 'https://apis.live.net/v5.0'
       res = self.class.get('/%s?limit=%d&offset=%d' % [ url, limit, offset ],
         headers: {
@@ -65,6 +64,15 @@ module MicrosoftLive
         JSON.parse(res.body, symbolize_names: true)
       else
         raise ApiError.new res.body
+      end
+    end
+
+    def ensure_valid_token!
+      if Time.now.to_i > expires_at
+        new_auth = renew_token
+        self.token = new_auth.token
+        self.refresh_token = new_auth.refresh_token
+        self.expires_at = new_auth.expires_at
       end
     end
 
