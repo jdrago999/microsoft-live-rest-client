@@ -56,4 +56,5 @@ This software is released under the Apache License, version 2.0. A copy of the l
 
 ## SEE ALSO
 
+  * https://msdn.microsoft.com/en-us/library/hh243648.aspx
   * https://msdn.microsoft.com/en-us/library/hh243649.aspx#refresh_rest
