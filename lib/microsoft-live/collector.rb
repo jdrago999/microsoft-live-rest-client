@@ -22,7 +22,7 @@ module MicrosoftLive
     end
 
     def next_page
-      offset += page_size
+      self.offset += page_size
       items
     end
   end
