@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/jdrago999/sinatra-microservice-base.svg?branch=master)](https://travis-ci.org/jdrago999/sinatra-microservice-base)
+[![Code Climate](https://codeclimate.com/github/jdrago999/microsoft-live-simple/badges/gpa.svg)](https://codeclimate.com/github/jdrago999/microsoft-live-simple)
+[![Test Coverage](https://codeclimate.com/github/jdrago999/microsoft-live-simple/badges/coverage.svg)](https://codeclimate.com/github/jdrago999/microsoft-live-simple/coverage)
+[![Issue Count](https://codeclimate.com/github/jdrago999/microsoft-live-simple/badges/issue_count.svg)](https://codeclimate.com/github/jdrago999/microsoft-live-simple)
+
 # microsoft-live-simple
 
 ## INSTALLATION
