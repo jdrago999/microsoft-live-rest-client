@@ -2,6 +2,7 @@
 [![Code Climate](https://codeclimate.com/github/jdrago999/microsoft-live-simple/badges/gpa.svg)](https://codeclimate.com/github/jdrago999/microsoft-live-simple)
 [![Test Coverage](https://codeclimate.com/github/jdrago999/microsoft-live-simple/badges/coverage.svg)](https://codeclimate.com/github/jdrago999/microsoft-live-simple/coverage)
 [![Issue Count](https://codeclimate.com/github/jdrago999/microsoft-live-simple/badges/issue_count.svg)](https://codeclimate.com/github/jdrago999/microsoft-live-simple)
+[![Gem Version](https://badge.fury.io/rb/microsoft-live-simple.svg)](https://badge.fury.io/rb/microsoft-live-simple)
 
 # microsoft-live-simple
 
