@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    microsoft-live-rest-client (0.1.0)
+    microsoft-live-simple (0.1.2)
       httparty
 
 GEM
@@ -82,7 +82,7 @@ DEPENDENCIES
   byebug
   codeclimate-test-reporter
   faker
-  microsoft-live-rest-client!
+  microsoft-live-simple!
   rake (~> 10.0)
   rspec
   rubocop
