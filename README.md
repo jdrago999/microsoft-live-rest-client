@@ -11,7 +11,7 @@
 In your `Gemfile`:
 
 ```ruby
-gem 'microsoft-live-simple', github: 'jdrago999/microsoft-live-simple'
+gem 'microsoft-live-simple'
 ```
 
 ## DESCRIPTION
