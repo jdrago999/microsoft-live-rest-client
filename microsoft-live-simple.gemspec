@@ -7,6 +7,7 @@ Gem::Specification.new do |spec|
   spec.summary     = 'Client for the Microsoft Live REST API'
   spec.description = 'Client for the Microsoft Live REST API'
   spec.required_rubygems_version = '>= 1.3.6'
+  spec.required_ruby_version = '~> 2.1'
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
